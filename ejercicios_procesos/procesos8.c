@@ -9,7 +9,7 @@
 // el hijo debe sumar la misma mtriz por columnas
 
 int **crear_matriz(int, int);
-void inicializar(int, int, int**);
+void inicializar_al_azar(int, int, int**);
 
 int main() {
     int filas, columnas;
@@ -25,7 +25,6 @@ int main() {
         printf("\n");
     }
     printf("\n"); 
-
 
     pid_t pid = fork();
 
@@ -51,6 +50,7 @@ int main() {
         printf("La suma de la fila %d fue: %d\n", i + 1, suma_filas);
         }
     }
+    return 0;
 }
 
 int **crear_matriz(int filas, int columnas) {
@@ -65,7 +65,7 @@ int **crear_matriz(int filas, int columnas) {
     return matriz;
 }
 
-void inicializar(int filas, int columnas, int **matriz) {
+void inicializar_al_azar(int filas, int columnas, int **matriz) {
     srand(time(NULL));
     for (int i = 0; i < filas; i++) {
         for (int j = 0; j < columnas; j++) {
